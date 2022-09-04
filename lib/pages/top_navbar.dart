@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jerindotdev_flutter/config/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../config/palette.dart';
 
 class NavBar extends StatefulWidget {
@@ -12,6 +13,9 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   bool home_ = true;
+
+  final Uri homeURL = Uri.parse("");
+  final Uri resumePath = Uri.file("./lib/resources/Jerin_James.pdf");
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +114,7 @@ class _NavBarState extends State<NavBar> {
                       // backgroundColor: Colors.cyanAccent,
                     ),
                     onPressed: () {
-                      print("button was clicked");
+                      launchUrl(resumePath);
                     },
                     child: Text(
                       "Resume",

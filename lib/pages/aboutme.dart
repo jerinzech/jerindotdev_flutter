@@ -13,16 +13,15 @@ class AboutMe extends StatefulWidget {
 }
 
 class _AboutMeState extends State<AboutMe> {
-  String githubURL = "https://docs.flutter.dev/search?q=button";
+  final Uri githubURL = Uri.parse("https://github.com/jerinzech");
+  final Uri spotifyURL = Uri.parse(
+      "https://open.spotify.com/user/8wvke3mlyxguidnu43nqife1z?si=5eb8da842cf14491");
+  final Uri twitterURL = Uri.parse("https://twitter.com/jerinzech");
 
-  launchURL(url) async {
-    if (await canLaunchUrl(url)) {
-      await launchURL(url);
-    } else {
-      throw "Could not launch url";
-    }
-    ;
-  }
+  final Uri linkedinURL =
+      Uri.parse("https://www.linkedin.com/in/jerin-james-052867180");
+  final Uri emailmeURL =
+      Uri.parse("mailto:jerinzdev@gmail.com?subject=News&body=New%20plugin");
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +88,7 @@ class _AboutMeState extends State<AboutMe> {
                   children: [
                     IconButton(
                       onPressed: () {
-                        launchURL(githubURL);
+                        launchUrl(githubURL);
                       },
                       icon: const Icon(FontAwesomeIcons.github),
                       iconSize: 24.0,
@@ -101,7 +100,7 @@ class _AboutMeState extends State<AboutMe> {
                     ),
                     IconButton(
                       onPressed: () {
-                        print("button was clicked");
+                        launchUrl(twitterURL);
                       },
                       icon: const Icon(FontAwesomeIcons.twitter),
                       iconSize: 24.0,
@@ -113,7 +112,7 @@ class _AboutMeState extends State<AboutMe> {
                     ),
                     IconButton(
                       onPressed: () {
-                        print("button was clicked");
+                        launchUrl(spotifyURL);
                       },
                       icon: const Icon(FontAwesomeIcons.spotify),
                       iconSize: 24.0,
@@ -131,7 +130,7 @@ class _AboutMeState extends State<AboutMe> {
                           shape: StadiumBorder(),
                         ),
                         onPressed: () {
-                          print("button was clicked");
+                          launchUrl(emailmeURL);
                         },
                         child: Text(
                           "Email me",
