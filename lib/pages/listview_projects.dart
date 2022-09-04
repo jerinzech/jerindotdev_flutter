@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
-class BlogsAndRelated extends StatelessWidget {
+class BlogsAndRelated extends StatefulWidget {
   const BlogsAndRelated({super.key});
 
   @override
+  State<BlogsAndRelated> createState() => _BlogsAndRelatedState();
+}
+
+class _BlogsAndRelatedState extends State<BlogsAndRelated> {
+  @override
   Widget build(BuildContext context) {
-    return const Text("list view of blogs and projects");
+    return Container(
+      color: Colors.grey[900],
+    );
   }
 }

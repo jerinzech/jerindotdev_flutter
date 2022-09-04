@@ -15,31 +15,116 @@ class _NavBarState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Container(
-        color: AppColors.mainBlackBackground,
+        color: Colors.grey[900],
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              child: OutlinedButton(
-                onPressed: home(),
-                child: const Text("home"),
+              width: 0.2 * width,
+              height: height,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "lib/assets/images/jerinjamessignature_white.png",
+                    width: 300.0,
+                    height: 70.0,
+                  ),
+                ],
               ),
             ),
-            OutlinedButton(
-              onPressed: home(),
-              child: const Text("about"),
+            SizedBox(
+              width: 0.5 * width,
+              height: height,
             ),
-            OutlinedButton(
-              onPressed: home(),
-              child: const Text("projects"),
-            )
+            SizedBox(
+              width: 0.3 * width,
+              height: height,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  OutlinedButton(
+                    autofocus: true,
+                    style: OutlinedButton.styleFrom(
+                      padding:
+                          const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+                      // elevation: 20.0,
+                      side: const BorderSide(color: Colors.transparent),
+                      // backgroundColor: Colors.amberAccent,
+                    ),
+                    onPressed: () {
+                      print("button was clicked");
+                    },
+                    child: Text(
+                      "Home",
+                      style: robotoMonoStyle.copyWith(
+                          color: Colors.white, fontSize: 16),
+                    ),
+                  ),
+                  // OutlinedButton(
+                  //   autofocus: true,
+                  //   style: OutlinedButton.styleFrom(
+                  //     padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+                  //     // elevation: 20.0,
+                  //     side: BorderSide(color: Colors.transparent),
+                  //     // backgroundColor: Colors.blueGrey,
+                  //   ),
+                  //   onPressed: () {
+                  //     print("button was clicked");
+                  //   },
+                  //   child: Text(
+                  //     "About",
+                  //     style: robotoMonoStyle.copyWith(
+                  //         color: Colors.white, fontSize: 16),
+                  //   ),
+                  // ),
+                  OutlinedButton(
+                    autofocus: true,
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+                      // elevation: 20.0,
+                      side: BorderSide(color: Colors.transparent),
+                      // backgroundColor: Colors.cyanAccent,
+                    ),
+                    onPressed: () {
+                      print("button was clicked");
+                    },
+                    child: Text(
+                      "Projects",
+                      style: robotoMonoStyle.copyWith(
+                          color: Colors.white, fontSize: 16),
+                    ),
+                  ),
+                  OutlinedButton(
+                    autofocus: true,
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+                      // elevation: 20.0,
+                      side: BorderSide(color: Colors.transparent),
+                      // backgroundColor: Colors.cyanAccent,
+                    ),
+                    onPressed: () {
+                      print("button was clicked");
+                    },
+                    child: Text(
+                      "Resume",
+                      style: robotoMonoStyle.copyWith(
+                          color: Colors.yellowAccent, fontSize: 16),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 40.0,
+                  ),
+                ],
+              ),
+            ),
           ],
         ));
   }
-}
-
-home() {
-  return;
 }
