@@ -100,6 +100,18 @@ class _AboutMeState extends State<AboutMe> {
                     ),
                     IconButton(
                       onPressed: () {
+                        launchUrl(linkedinURL);
+                      },
+                      icon: const Icon(FontAwesomeIcons.linkedin),
+                      iconSize: 24.0,
+                      color: Colors.white,
+                      autofocus: true,
+                    ),
+                    const SizedBox(
+                      width: 10.0,
+                    ),
+                    IconButton(
+                      onPressed: () {
                         launchUrl(twitterURL);
                       },
                       icon: const Icon(FontAwesomeIcons.twitter),
