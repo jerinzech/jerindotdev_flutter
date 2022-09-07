@@ -24,11 +24,11 @@ class _NavBarState extends State<NavBar> {
     return Container(
         color: Colors.grey[900],
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              width: 0.2 * width,
+              // width: 0.15 * width,
               height: height,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -36,7 +36,7 @@ class _NavBarState extends State<NavBar> {
                 children: [
                   Image.asset(
                     "lib/assets/images/jerinjamessignature_white.png",
-                    width: 300.0,
+                    width: 200.0,
                     height: 70.0,
                   ),
                 ],
@@ -46,11 +46,12 @@ class _NavBarState extends State<NavBar> {
               width: 0.5 * width,
               height: height,
             ),
+            Spacer(),
             SizedBox(
-              width: 0.3 * width,
+              // width: 0.3 * width,
               height: height,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   OutlinedButton(
@@ -71,23 +72,23 @@ class _NavBarState extends State<NavBar> {
                           color: Colors.white, fontSize: 16),
                     ),
                   ),
-                  // OutlinedButton(
-                  //   autofocus: true,
-                  //   style: OutlinedButton.styleFrom(
-                  //     padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
-                  //     // elevation: 20.0,
-                  //     side: BorderSide(color: Colors.transparent),
-                  //     // backgroundColor: Colors.blueGrey,
-                  //   ),
-                  //   onPressed: () {
-                  //     print("button was clicked");
-                  //   },
-                  //   child: Text(
-                  //     "About",
-                  //     style: robotoMonoStyle.copyWith(
-                  //         color: Colors.white, fontSize: 16),
-                  //   ),
-                  // ),
+                  OutlinedButton(
+                    autofocus: true,
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+                      // elevation: 20.0,
+                      side: BorderSide(color: Colors.transparent),
+                      // backgroundColor: Colors.blueGrey,
+                    ),
+                    onPressed: () {
+                      print("button was clicked");
+                    },
+                    child: Text(
+                      "About",
+                      style: robotoMonoStyle.copyWith(
+                          color: Colors.white, fontSize: 16),
+                    ),
+                  ),
                   OutlinedButton(
                     autofocus: true,
                     style: OutlinedButton.styleFrom(

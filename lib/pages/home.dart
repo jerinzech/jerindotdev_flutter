@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jerindotdev_flutter/pages/profile_page.dart';
 
 import 'top_navbar.dart';
 import 'aboutme.dart';
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
             height: 0.2 * height,
             child: BlogsAndRelated(),
           ),
+          // ProfilePage()
         ],
       ),
     );

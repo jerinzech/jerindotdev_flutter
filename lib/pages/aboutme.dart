@@ -33,39 +33,61 @@ class _AboutMeState extends State<AboutMe> {
         children: [
           SizedBox(
             height: height,
-            width: 0.3 * width,
+            width: 0.2 * width,
           ),
           SizedBox(
             height: height,
-            width: 0.4 * width,
+            width: 0.6 * width,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Front-End developer",
-                  style: robotoMonoStyle.copyWith(
-                      fontSize: 35,
-                      color: AppColors.darkModeText,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  "creating pixel-perfect, \nintuitive interfaces.",
-                  style: robotoMonoStyle.copyWith(
-                      fontSize: 35,
-                      color: AppColors.darkModeText,
-                      fontWeight: FontWeight.w600),
-                ),
-                SizedBox(
-                  height: 0.05 * height,
-                  width: width,
-                ),
-                Text(
-                  "I'm Jerin, a Bengaluru [India] based aspiring front-end developer. I specialize in building mobile and web based applications.",
-                  style: robotoMonoStyle.copyWith(
-                      fontSize: 15,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w100),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Front-End developer",
+                          style: robotoMonoStyle.copyWith(
+                              fontSize: 35,
+                              color: AppColors.darkModeText,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "creating pixel-perfect, \nintuitive interfaces.",
+                          style: robotoMonoStyle.copyWith(
+                              fontSize: 35,
+                              color: AppColors.darkModeText,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 0.05 * height,
+                          // width: width,
+                        ),
+                        Text(
+                          "I'm Jerin, a Bengaluru [India] based aspiring front-end developer. \nI specialize in building mobile and web based applications.",
+                          style: robotoMonoStyle.copyWith(
+                              fontSize: 15,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w100),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      color: Colors.grey[900],
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset(
+                        "lib/assets/images/jerin_avatar.png",
+                        height: 300,
+                        width: 300,
+                        scale: 2.0,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 0.03 * height,
@@ -159,7 +181,7 @@ class _AboutMeState extends State<AboutMe> {
           ),
           SizedBox(
             height: height,
-            width: 0.3 * width,
+            width: 0.2 * width,
           ),
         ],
       ),

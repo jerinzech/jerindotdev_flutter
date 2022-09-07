@@ -64,6 +64,7 @@ flutter:
   assets:
     - lib/assets/images/jerinjamessignature_white.png
     - lib/assets/images/jerinjamessignature_black.png
+    - lib/assets/images/jerin_avatar.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
