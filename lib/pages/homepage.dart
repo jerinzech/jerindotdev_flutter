@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jerindotdev_flutter/pages/profile_page.dart';
 
-import 'top_navbar.dart';
-import 'aboutme.dart';
+import 'about.dart';
 import 'listview_projects.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,19 +18,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
-            width: width,
-            height: 0.07 * height,
-            child: const NavBar(),
-          ),
+          // SizedBox(
+          //   width: width,
+          //   height: 0.07 * height,
+          //   child: const NavBar(),
+          // ),
+          // Divider(color: Colors.white, height: 2.0),
           SizedBox(
             width: width,
             height: 0.73 * height,
             child: AboutMe(),
           ),
-          SizedBox(
-            width: width,
-            height: 0.2 * height,
+          Expanded(
+            // width: width,
+            // height: 0.2 * height,
             child: BlogsAndRelated(),
           ),
           // ProfilePage()

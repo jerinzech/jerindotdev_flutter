@@ -3,7 +3,8 @@ import 'package:jerindotdev_flutter/config/constants.dart';
 import 'package:jerindotdev_flutter/config/palette.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+
+import '../config/code_blocks.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({super.key});
@@ -77,16 +78,7 @@ class _AboutMeState extends State<AboutMe> {
                         ),
                       ],
                     ),
-                    Container(
-                      color: Colors.grey[900],
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        "lib/assets/images/jerin_avatar.png",
-                        height: 300,
-                        width: 300,
-                        scale: 2.0,
-                      ),
-                    ),
+                    jerinAvatar,
                   ],
                 ),
                 SizedBox(

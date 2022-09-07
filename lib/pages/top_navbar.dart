@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:jerindotdev_flutter/config/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../config/palette.dart';
+import '../config/routes.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -64,12 +65,16 @@ class _NavBarState extends State<NavBar> {
                       // backgroundColor: Colors.amberAccent,
                     ),
                     onPressed: () {
-                      print("button was clicked");
+                      print("Home button was clicked");
+                      // Navigator.of(context).pushNamed('/');
+                      home(context);
                     },
                     child: Text(
                       "Home",
                       style: robotoMonoStyle.copyWith(
-                          color: Colors.white, fontSize: 16),
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal),
                     ),
                   ),
                   OutlinedButton(
@@ -81,12 +86,15 @@ class _NavBarState extends State<NavBar> {
                       // backgroundColor: Colors.blueGrey,
                     ),
                     onPressed: () {
-                      print("button was clicked");
+                      print("About button was clicked");
+                      Navigator.of(context).pushNamed('/Profile');
                     },
                     child: Text(
                       "About",
                       style: robotoMonoStyle.copyWith(
-                          color: Colors.white, fontSize: 16),
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal),
                     ),
                   ),
                   OutlinedButton(
@@ -98,12 +106,15 @@ class _NavBarState extends State<NavBar> {
                       // backgroundColor: Colors.cyanAccent,
                     ),
                     onPressed: () {
-                      print("button was clicked");
+                      print("Projects button was clicked");
+                      Navigator.of(context).pushNamed('/Projects');
                     },
                     child: Text(
                       "Projects",
                       style: robotoMonoStyle.copyWith(
-                          color: Colors.white, fontSize: 16),
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal),
                     ),
                   ),
                   OutlinedButton(
@@ -120,11 +131,13 @@ class _NavBarState extends State<NavBar> {
                     child: Text(
                       "Resume",
                       style: robotoMonoStyle.copyWith(
-                          color: Colors.yellowAccent, fontSize: 16),
+                          color: Colors.yellowAccent,
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal),
                     ),
                   ),
                   SizedBox(
-                    width: 40.0,
+                    width: 30.0,
                   ),
                 ],
               ),
@@ -132,4 +145,8 @@ class _NavBarState extends State<NavBar> {
           ],
         ));
   }
+}
+
+home(context) {
+  Navigator.of(context).pushNamed('/');
 }
