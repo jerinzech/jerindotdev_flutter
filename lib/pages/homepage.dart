@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'about.dart';
-import 'listview_projects.dart';
+import 'desktop_view.dart';
+import 'mobile_view.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final Widget MobileView;
+  final Widget DesktopView;
+
+  const HomePage({
+    super.key,
+    required this.MobileView,
+    required this.DesktopView,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -13,30 +20,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: Column(
-        children: [
-          // SizedBox(
-          //   width: width,
-          //   height: 0.07 * height,
-          //   child: const NavBar(),
-          // ),
-          // Divider(color: Colors.white, height: 2.0),
-          SizedBox(
-            width: width,
-            height: 0.73 * height,
-            child: AboutMe(),
-          ),
-          Expanded(
-            // width: width,
-            // height: 0.2 * height,
-            child: BlogsAndRelated(),
-          ),
-          // ProfilePage()
-        ],
-      ),
+    // double height = MediaQuery.of(context).size.height;
+    // double width = MediaQuery.of(context).size.width;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < 1208) {
+          return MobileView();
+        } else {
+          return DesktopView();
+        }
+      },
     );
   }
 }

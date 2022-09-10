@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jerindotdev_flutter/pages/landing_page.dart';
+import 'package:jerindotdev_flutter/config/palette.dart';
+import 'package:jerindotdev_flutter/pages/desktop_view.dart';
+import 'package:jerindotdev_flutter/pages/homepage.dart';
+import 'package:jerindotdev_flutter/pages/mobile_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +20,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData(backgroundColor: Colors.grey),
-      home: LandingPage(),
+      // theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.yellow)),
+      home: HomePage(
+        MobileView: MobileView(),
+        DesktopView: DesktopView(),
+      ),
     );
   }
 }

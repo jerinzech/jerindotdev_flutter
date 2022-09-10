@@ -7,14 +7,23 @@ import 'package:url_launcher/url_launcher.dart';
 import '../config/constants.dart';
 import '../config/palette.dart';
 
-class AboutMe extends StatefulWidget {
-  const AboutMe({super.key});
+class demoabout extends StatefulWidget {
+  const demoabout({super.key});
 
   @override
-  State<AboutMe> createState() => _AboutMeState();
+  State<demoabout> createState() => _demoaboutState();
 }
 
-class _AboutMeState extends State<AboutMe> {
+class _demoaboutState extends State<demoabout> {
+  final Uri githubURL = Uri.parse("https://github.com/jerinzech");
+  final Uri spotifyURL = Uri.parse(
+      "https://open.spotify.com/user/8wvke3mlyxguidnu43nqife1z?si=5eb8da842cf14491");
+  final Uri twitterURL = Uri.parse("https://twitter.com/jerinzech");
+
+  final Uri linkedinURL =
+      Uri.parse("https://www.linkedin.com/in/jerin-james-052867180");
+  final Uri emailmeURL =
+      Uri.parse("mailto:jerinzdev@gmail.com?subject=News&body=New%20plugin");
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -202,7 +211,84 @@ class _AboutMeState extends State<AboutMe> {
                                 // height: 0.1 * height,
                                 child: Container(
                                   color: Colors.grey[900],
-                                  child: iconRow,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      // Spacer(),
+                                      IconButton(
+                                        onPressed: () {
+                                          launchUrl(githubURL);
+                                        },
+                                        icon:
+                                            const Icon(FontAwesomeIcons.github),
+                                        iconSize: 24.0,
+                                        color: Colors.white,
+                                        autofocus: true,
+                                      ),
+                                      const SizedBox(
+                                        width: 15.0,
+                                      ),
+                                      IconButton(
+                                        onPressed: () {
+                                          launchUrl(linkedinURL);
+                                        },
+                                        icon: const Icon(
+                                            FontAwesomeIcons.linkedin),
+                                        iconSize: 24.0,
+                                        color: Colors.white,
+                                        autofocus: true,
+                                      ),
+                                      const SizedBox(
+                                        width: 15.0,
+                                      ),
+                                      IconButton(
+                                        onPressed: () {
+                                          launchUrl(twitterURL);
+                                        },
+                                        icon: const Icon(
+                                            FontAwesomeIcons.twitter),
+                                        iconSize: 24.0,
+                                        color: Colors.white,
+                                        autofocus: true,
+                                      ),
+                                      const SizedBox(
+                                        width: 15.0,
+                                      ),
+                                      IconButton(
+                                        onPressed: () {
+                                          launchUrl(spotifyURL);
+                                        },
+                                        icon: const Icon(
+                                            FontAwesomeIcons.spotify),
+                                        iconSize: 24.0,
+                                        color: Colors.white,
+                                        autofocus: true,
+                                      ),
+                                      const SizedBox(
+                                        width: 15.0,
+                                      ),
+                                      OutlinedButton(
+                                          autofocus: true,
+                                          style: OutlinedButton.styleFrom(
+                                            backgroundColor:
+                                                AppColors.darkModefade,
+                                            padding: EdgeInsets.fromLTRB(
+                                                15.0, 15.0, 15.0, 15.0),
+                                            shape: StadiumBorder(),
+                                          ),
+                                          onPressed: () {
+                                            launchUrl(emailmeURL);
+                                          },
+                                          child: Text(
+                                            "Email me",
+                                            style: robotoMonoStyle.copyWith(
+                                                color: Colors.white,
+                                                fontSize: 15),
+                                          ))
+                                    ],
+                                  ),
                                 ),
                               )
                               // Spacer(),
@@ -222,7 +308,25 @@ class _AboutMeState extends State<AboutMe> {
                         child: SizedBox(
                           width: 0.1 * width,
                           height: 0.1 * width,
-                          child: jerinAvatar,
+                          child: Padding(
+                            padding: const EdgeInsets.all(100.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border:
+                                      Border.all(color: Colors.white, width: 3),
+                                  color: AppColors.imageBG),
+                              // color: AppColors.imageBG,
+                              padding: const EdgeInsets.all(8.0),
+
+                              child: Image.asset(
+                                "lib/assets/images/jerin_avatar.png",
+                                // height: 300,
+                                // width: 300,
+                                // scale: 2.0,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -232,179 +336,6 @@ class _AboutMeState extends State<AboutMe> {
               ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class MobileAbout extends StatefulWidget {
-  const MobileAbout({super.key});
-
-  @override
-  State<MobileAbout> createState() => _MobileAboutState();
-}
-
-class _MobileAboutState extends State<MobileAbout> {
-  @override
-  Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    return Center(
-      child: Expanded(
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints viewportConstraints) {
-            return SingleChildScrollView(
-              child: Container(
-                width: width,
-                color: Colors.grey[900],
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      color: Colors.grey[900],
-                      padding: const EdgeInsets.all(8.0),
-                      width: 0.8 * width,
-                      height: 0.5 * height,
-                      child: Container(child: jerinAvatar),
-                      alignment: Alignment.bottomCenter,
-                    ),
-                    Container(
-                      color: Colors.grey[900],
-                      padding: const EdgeInsets.all(8.0),
-                      width: 0.8 * width,
-                      height: 0.5 * height,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Front-End developer ",
-                            style: poppinsStyle.copyWith(
-                                fontSize: 28,
-                                color: AppColors.darkModeText,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              style: poppinsStyle,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                    text: 'creating ',
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.darkModeText,
-                                    )),
-                                TextSpan(
-                                    text: 'pixel-perfect',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 25,
-                                        color: AppColors.darkModeText,
-                                        decoration: TextDecoration.underline,
-                                        decorationColor: AppColors.imageBG,
-                                        decorationThickness: 2)),
-                                TextSpan(
-                                    text: '\nintuitive',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 25,
-                                        color: AppColors.darkModeText,
-                                        decoration: TextDecoration.underline,
-                                        decorationColor: AppColors.imageBG,
-                                        decorationThickness: 2)),
-                                TextSpan(
-                                    text: ' interfaces.',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25,
-                                      color: AppColors.darkModeText,
-                                    )),
-                              ],
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(
-                            height: 0.05 * height,
-                            // width: width,
-                          ),
-                          RichText(
-                            text: TextSpan(style: poppinsStyle, children: [
-                              TextSpan(
-                                text: "I'm ",
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w700),
-                              ),
-                              TextSpan(
-                                text: "Jerin",
-                                style: TextStyle(
-                                    color: AppColors.imageBG,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(
-                                text:
-                                    ", a Bengaluru [India] based aspiring front-end developer. \nI specialize in building mobile and web based applications.",
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w700),
-                              ),
-                            ]),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(
-                            height: 0.03 * height,
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              // text: 'I’m experienced in ',
-                              style: poppinsStyle,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                    text: ' I’m experienced in ',
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w700)),
-                                TextSpan(
-                                    text: 'Flutter',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue,
-                                    )),
-                                TextSpan(
-                                    text: ' & ',
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                    )),
-                                TextSpan(
-                                    text: 'React.',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.lightBlue,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        '\nAlways open to collaborate where I can help design and build eye-pleasing user experiences. I dabble a bit on Figma too.',
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w700)),
-                              ],
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(height: 0.05 * height, width: width),
-                          Center(child: iconRow),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
         ),
       ),
     );
