@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'desktop_view.dart';
+import '../screens/desktop_view.dart';
+
 import 'mobile_view.dart';
 
 class HomePage extends StatefulWidget {

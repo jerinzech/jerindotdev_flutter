@@ -9,23 +9,28 @@ final Uri githubURL = Uri.parse("https://github.com/jerinzech");
 final Uri spotifyURL = Uri.parse(
     "https://open.spotify.com/user/8wvke3mlyxguidnu43nqife1z?si=5eb8da842cf14491");
 final Uri twitterURL = Uri.parse("https://twitter.com/jerinzech");
+final Uri resumeLink = Uri.parse(
+    "https://github.com/jerinzech/jerinzech.github.io/blob/7abaaa7b9414056a88e3fdf41dc3165dcaa7b5d4/assets/Jerin_James.pdf");
 
 final Uri linkedinURL =
     Uri.parse("https://www.linkedin.com/in/jerin-james-052867180");
 final Uri emailmeURL =
     Uri.parse("mailto:jerinzdev@gmail.com?subject=News&body=New%20plugin");
 
+final Uri resumePath = Uri.file("./lib/screens/Jerin_James.pdf");
+
 // double width = MediaQuery.of(context).width;
 
 Widget jerinAvatar = Container(
   child: Padding(
-    padding: const EdgeInsets.all(50.0),
+    padding: const EdgeInsets.all(10.0),
     child: Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(color: Colors.white, width: 5),
-        color: AppColors.imageBG,
+        color: Colors.grey[900],
       ),
+
       // color: AppColors.imageBG,
       padding: const EdgeInsets.all(8.0),
 
@@ -45,11 +50,14 @@ Widget jerinSignature = Image.asset(
   height: 100.0,
 );
 
-Widget iconRow = Row(
+Widget iconList = Column(
   mainAxisAlignment: MainAxisAlignment.center,
   crossAxisAlignment: CrossAxisAlignment.center,
   children: [
     // Spacer(),
+    // const SizedBox(
+    //   height: 50.0,
+    // ),
     IconButton(
       onPressed: () {
         launchUrl(githubURL);
@@ -60,7 +68,7 @@ Widget iconRow = Row(
       autofocus: true,
     ),
     const SizedBox(
-      width: 15.0,
+      height: 40.0,
     ),
     IconButton(
       onPressed: () {
@@ -72,7 +80,7 @@ Widget iconRow = Row(
       autofocus: true,
     ),
     const SizedBox(
-      width: 15.0,
+      height: 40.0,
     ),
     IconButton(
       onPressed: () {
@@ -84,7 +92,7 @@ Widget iconRow = Row(
       autofocus: true,
     ),
     const SizedBox(
-      width: 15.0,
+      height: 40.0,
     ),
     IconButton(
       onPressed: () {
@@ -96,21 +104,112 @@ Widget iconRow = Row(
       autofocus: true,
     ),
     const SizedBox(
-      width: 15.0,
+      height: 40.0,
     ),
-    OutlinedButton(
-        autofocus: true,
-        style: OutlinedButton.styleFrom(
-          backgroundColor: AppColors.darkModefade,
-          padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
-          shape: const StadiumBorder(),
+    IconButton(
+      onPressed: () {
+        launchUrl(emailmeURL);
+      },
+      icon: const Icon(Icons.email),
+      iconSize: 24.0,
+      color: Colors.white,
+      autofocus: true,
+    ),
+    // const SizedBox(
+    //   height: 50.0,
+    // ),
+    // Spacer(),
+    // SizedBox(height: 60.0),
+  ],
+);
+Widget iconListMobile = Column(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: [
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        IconButton(
+          onPressed: () {
+            launchUrl(githubURL);
+          },
+          icon: const Icon(FontAwesomeIcons.github),
+          iconSize: 24.0,
+          color: Colors.white,
+          autofocus: true,
         ),
-        onPressed: () {
-          launchUrl(emailmeURL);
-        },
-        child: Text(
-          "Email me",
-          style: robotoMonoStyle.copyWith(color: Colors.white, fontSize: 15),
-        ))
+        IconButton(
+          onPressed: () {
+            launchUrl(linkedinURL);
+          },
+          icon: const Icon(FontAwesomeIcons.linkedin),
+          iconSize: 24.0,
+          color: Colors.white,
+          autofocus: true,
+        ),
+        IconButton(
+          onPressed: () {
+            launchUrl(twitterURL);
+          },
+          icon: const Icon(FontAwesomeIcons.twitter),
+          iconSize: 24.0,
+          color: Colors.white,
+          autofocus: true,
+        ),
+        IconButton(
+          onPressed: () {
+            launchUrl(spotifyURL);
+          },
+          icon: const Icon(FontAwesomeIcons.spotify),
+          iconSize: 24.0,
+          color: Colors.white,
+          autofocus: true,
+        ),
+      ],
+    ),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        OutlinedButton(
+          autofocus: true,
+          style: OutlinedButton.styleFrom(
+            padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+            // elevation: 20.0,
+            side: const BorderSide(color: Colors.transparent),
+            backgroundColor: AppColors.darkModefade,
+            shape: const StadiumBorder(),
+            // backgroundColor: Colors.cyanAccent,
+          ),
+          onPressed: () {
+            launchUrl(emailmeURL);
+          },
+          child: Text(
+            "email me",
+            style: montserratStyle.copyWith(
+                color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+          ),
+        ),
+        OutlinedButton(
+          autofocus: true,
+          style: OutlinedButton.styleFrom(
+            padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+            // elevation: 20.0,
+            side: const BorderSide(color: Colors.transparent),
+            backgroundColor: AppColors.darkModefade,
+            shape: const StadiumBorder(),
+            // backgroundColor: Colors.cyanAccent,
+          ),
+          onPressed: () {
+            launchUrl(resumeLink);
+          },
+          child: Text(
+            "resume",
+            style: montserratStyle.copyWith(
+                color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ],
+    ),
   ],
 );

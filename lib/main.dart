@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jerindotdev_flutter/config/palette.dart';
-import 'package:jerindotdev_flutter/pages/desktop_view.dart';
-import 'package:jerindotdev_flutter/pages/homepage.dart';
-import 'package:jerindotdev_flutter/pages/mobile_view.dart';
+import 'package:jerindotdev_flutter/screens/homepage.dart';
+import 'screens/desktop_view.dart';
+import 'screens/mobile_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(backgroundColor: Colors.black),
       // theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.yellow)),
       home: HomePage(
         MobileView: MobileView(),
