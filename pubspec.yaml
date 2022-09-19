@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^3.0.1
   font_awesome_flutter: ^10.1.0
   url_launcher: ^6.1.5
+  floating_navbar: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - lib/assets/images/jerinjamessignature_white.png
+    # - lib/assets/images/jerinjamessignature_white11.png
+    - lib/assets/images/jerinjamessignature_white12.png
     - lib/assets/images/jerinjamessignature_black.png
     - lib/assets/images/jerin_avatar.png
 
