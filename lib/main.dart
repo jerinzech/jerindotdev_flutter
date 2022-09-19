@@ -14,12 +14,16 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+String title = "Jerin James";
+
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(backgroundColor: Colors.black),
+      title: title,
+
       // theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.yellow)),
       home: HomePage(
         MobileView: MobileView(),
