@@ -169,12 +169,14 @@ Widget iconListMobile = Column(
       ],
     ),
     Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        const Spacer(),
         OutlinedButton(
           autofocus: true,
           style: OutlinedButton.styleFrom(
-            padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+            padding: const EdgeInsets.fromLTRB(20.0, 17.0, 20.0, 17.0),
             // elevation: 20.0,
             side: const BorderSide(color: Colors.transparent),
             backgroundColor: AppColors.darkModefade,
@@ -190,10 +192,11 @@ Widget iconListMobile = Column(
                 color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
           ),
         ),
+        const Spacer(),
         OutlinedButton(
           autofocus: true,
           style: OutlinedButton.styleFrom(
-            padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+            padding: const EdgeInsets.fromLTRB(20.0, 17.0, 20.0, 17.0),
             // elevation: 20.0,
             side: const BorderSide(color: Colors.transparent),
             backgroundColor: AppColors.darkModefade,
@@ -209,6 +212,7 @@ Widget iconListMobile = Column(
                 color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
           ),
         ),
+        const Spacer(),
       ],
     ),
   ],

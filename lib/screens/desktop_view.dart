@@ -158,7 +158,7 @@ class __DesktopAppBarState extends State<_DesktopAppBar> {
             OutlinedButton(
               autofocus: true,
               style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+                padding: const EdgeInsets.fromLTRB(20.0, 17.0, 20.0, 17.0),
                 // elevation: 20.0,
                 side: const BorderSide(color: Colors.transparent),
                 backgroundColor: AppColors.darkModefade,
@@ -279,6 +279,14 @@ class _AboutMeState extends State<AboutMe> {
                                                           Colors.red,
                                                       decorationThickness: 2)),
                                               TextSpan(
+                                                  text: ',',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 40,
+                                                    color:
+                                                        AppColors.darkModeText,
+                                                  )),
+                                              TextSpan(
                                                   text: '\nintuitive',
                                                   style: TextStyle(
                                                       fontWeight:
@@ -383,7 +391,7 @@ class _AboutMeState extends State<AboutMe> {
                                           fontSize: 15,
                                         )),
                                     TextSpan(
-                                        text: 'React.',
+                                        text: 'React',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.lightBlue,

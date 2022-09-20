@@ -154,6 +154,13 @@ class _MobileAboutState extends State<MobileAbout> {
                                   decorationColor: Colors.red,
                                   decorationThickness: 2)),
                           TextSpan(
+                              text: ',',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30,
+                                color: AppColors.darkModeText,
+                              )),
+                          TextSpan(
                               text: '\nintuitive',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
