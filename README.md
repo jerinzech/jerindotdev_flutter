@@ -1,6 +1,6 @@
 # jerindotdev_flutter
 
-Portfolio repo. Its hosted using Github Pages and made using Flutter. Its respinsive so the layout adapts to smaller screens.
+Portfolio repo. Its hosted using Github Pages and made using Flutter. Its respinsive so the layout adapts to smaller screens. Check it out at www.jerin.dev.
 
 Web view: <br />
 
