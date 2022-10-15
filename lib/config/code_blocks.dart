@@ -10,7 +10,7 @@ final Uri spotifyURL = Uri.parse(
     "https://open.spotify.com/user/8wvke3mlyxguidnu43nqife1z?si=5eb8da842cf14491");
 final Uri twitterURL = Uri.parse("https://twitter.com/jerinzech");
 final Uri resumeLink = Uri.parse(
-    "https://github.com/jerinzech/jerinzech.github.io/blob/7abaaa7b9414056a88e3fdf41dc3165dcaa7b5d4/assets/Jerin_James.pdf");
+    "https://github.com/jerinzech/jerinzech.github.io/blob/92521c65bea49cb888a85344f697ae2173024ef8/assets/Jerin_James.pdf");
 
 final Uri linkedinURL =
     Uri.parse("https://www.linkedin.com/in/jerin-james-052867180");
